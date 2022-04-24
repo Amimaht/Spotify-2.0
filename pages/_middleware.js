@@ -15,3 +15,5 @@ export async function middleware(req) {
     return NextResponse.rewrite(new URL('/login', req.url))
   }
 }
+
+secureCookie: process.env.NEXTAUTH_URL?.startsWith("https://") ?? !!process.env.VERCEL_URL 
